@@ -22,6 +22,7 @@
     {{View::make('header')}}
     @yield('content')
     {{View::make('footer')}}
+    <h2>amfrf</h2>
 
 </body>
 <style>
