@@ -22,7 +22,7 @@
     {{View::make('header')}}
     @yield('content')
     {{View::make('footer')}}
-    <h2>amfrf</h2>
+
 
 </body>
 <style>
@@ -30,6 +30,28 @@
         height: 500px;
         width: 100%;
         padding-top: 100px;
+    }
+    img.slider-img{
+        height: 600px !important;
+        width: 1200px !important;
+    }
+    .custom-product{
+        height: 600px;
+
+    }
+    .slider-text{
+        background-color: #35443585 !important;
+    }
+    .trending-images{
+        height: 150px;
+        width:230px
+    }
+    .trending-items{
+        float: left;
+        margin: 50px
+    }
+    .detail-img{
+        height: 200px;
     }
 </style>
 </html>
