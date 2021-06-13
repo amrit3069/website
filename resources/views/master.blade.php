@@ -31,8 +31,5 @@
         width: 100%;
         padding-top: 100px;
     }
-    .inner_div{
-        margin-left: 370px;
-    }
 </style>
 </html>

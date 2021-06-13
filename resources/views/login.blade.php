@@ -3,8 +3,9 @@
 
 <div class="container login">
     <div class='row'>
-    <div class = 'col-sm-4 inner_div'>
-    <form action="" class = 'login1'>
+    <div class = 'col-sm-4 container'>
+    <form action="login" method="POST">
+      @csrf
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
