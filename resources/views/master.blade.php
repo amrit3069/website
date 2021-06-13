@@ -53,5 +53,9 @@
     .detail-img{
         height: 200px;
     }
+    .search{
+        width: 500px !important;
+        margin-left: 250px;
+    }
 </style>
 </html>
