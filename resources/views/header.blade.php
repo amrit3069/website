@@ -1,5 +1,14 @@
+@php
+use App\Http\Controllers\productcontroller;
+$count = 0;
+if(Session::has('user')){
+$count = productcontroller::cartcount();
+}
+    
+@endphp
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" href="/">Shopify</a>
   
 
     <ul class="navbar-nav">
@@ -15,8 +24,23 @@
     </li>
     
     <li class="nav-item">
-        <a class="nav-link" href="#">amrit</a>
-        </li>
+        <a class="nav-link" href="#">cart({{$count}})</a>
+    </li>
+    @if(Session::has('user'))
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        {{Session::get('user')['name']}}
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/logout">Logout</a>
+      </div>
+    </li>          
+    @else
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+  </li> 
+    @endif
+    
     </ul>
   </nav>
   <br>
