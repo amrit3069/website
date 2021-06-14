@@ -15,7 +15,7 @@
     </li>
     
     <li class="nav-item">
-        <a class="nav-link" href="#">Cart(0)</a>
+        <a class="nav-link" href="#">amrit</a>
         </li>
     </ul>
   </nav>

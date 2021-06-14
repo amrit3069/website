@@ -12,16 +12,15 @@
             <h4>Details : {{$data1['description']}}</h4>
             <h4>Category : {{$data1['category']}}</h4>
             <br><br>
-            <button class = 'btn btn-primary'>Add to Card</button>
+            <form action="/add_to_cart" method="POST">
+                @csrf
+                <input type="hidden" name = 'product_id' value = {{$data1['id']}}>
+                <button class = 'btn btn-primary'>Add to Card</button>
+            </form>
             <br><br>
             <button class = 'btn btn-success'>Buy Now</button>
-
-
-
         </div>
     </div>
-    
 </div>
-
 @endsection
 
