@@ -46,6 +46,10 @@
         height: 150px;
         width:230px
     }
+    .trending-images1{
+        height: 70px;
+        width:100px
+    }
     .trending-items{
         float: left;
         margin: 50px

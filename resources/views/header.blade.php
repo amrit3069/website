@@ -24,7 +24,7 @@ $count = productcontroller::cartcount();
     </li>
     
     <li class="nav-item">
-        <a class="nav-link" href="#">cart({{$count}})</a>
+        <a class="nav-link" href="/cartlist">cart({{$count}})</a>
     </li>
     @if(Session::has('user'))
     <li class="nav-item dropdown">
