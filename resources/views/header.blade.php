@@ -13,7 +13,7 @@ $count = productcontroller::cartcount();
 
     <ul class="navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link" href="/myorders">Orders</a>
     </li>
 
     <li>
@@ -39,6 +39,9 @@ $count = productcontroller::cartcount();
     <li class="nav-item">
       <a class="nav-link" href="/login">Login</a>
   </li> 
+  <li class="nav-item">
+    <a class="nav-link" href="/register">Register</a>
+</li> 
     @endif
     
     </ul>

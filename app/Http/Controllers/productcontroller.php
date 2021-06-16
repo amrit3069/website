@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\cart;
+use App\Models\order;
+use App\Models\User;
+
 use Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 
 
@@ -67,4 +72,41 @@ class productcontroller extends Controller
         ->sum('product.price');
         return view('ordernow',['order'=>$order]);
     }
+
+    function placeorder(Request $request){
+        $user_id = Session::get('user')['id'];
+        $all_cart = cart::where('user_id',$user_id)->get();
+        foreach($all_cart as $cart){
+            $order = new order;
+            $order->product_id = $cart['product_id'];
+            $order->user_id = $cart['user_id'];
+            $order->status = "yet to dispatch";
+            $order->payment_method = $request->payment;
+            $order->payment_status = 'pending';
+            $order->address = $request->address;
+            $order->save();
+            cart::where('user_id',$user_id)->delete();
+
+        }
+        return redirect('/');
+
+    }
+    function myorders(){
+        $user_id = Session::get('user')['id'];
+        $order = DB::table('order')
+        ->join('product','order.product_id','=','product.id')
+        ->where('order.user_id',$user_id)
+        ->get();
+        return view('myorders',['myorders'=>$order]);    
+    }
+    function register(Request $request){
+        $users = new User;
+        $users->name = $request->username;
+        $users->email = $request->email;
+        $users->password = Hash::make($request->pswd);
+        $users->save();
+        return redirect('/login');
+    }
+
+
 }
